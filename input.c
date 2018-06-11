@@ -8,9 +8,6 @@ int main(int argc, char *argv[]) {
     FILE *inputTwo;
     FILE *output;
 
-    //изменить все ошибки 404
-    // проверяю все флаги в завсимости от количества входных параметров
-
     if (argc == 1) {
         //вызвать описание программы
         exit(0);
@@ -50,7 +47,7 @@ int main(int argc, char *argv[]) {
     char newState;
     int newStateNum;
     char move;
-    int maxSize = ARRAY_SIZE;
+    int maxArraySize = ARRAY_SIZE;
 
     int *states;
     states = calloc(ARRAY_SIZE, sizeof(states));
@@ -105,32 +102,32 @@ int main(int argc, char *argv[]) {
             exit(106);
         }
 
-        if (arrayContainsChar(lastChar, symbols, maxSize) == -1) {
+        if (arrayContainsChar(lastChar, symbols, maxArraySize) == -1) {
             symbols[symbolsCount] = lastChar;
             symbolsCount++;
         }
 
-        if (arrayContainsInt(lastStateNum, states, maxSize) == -1) {
+        if (arrayContainsInt(lastStateNum, states, maxArraySize) == -1) {
             states[statesCount] = lastStateNum;
             statesCount++;
         }
 
-        command[arrayContainsChar(lastChar, symbols, maxSize)][arrayContainsInt(lastStateNum, states,
-                                                                                maxSize)].newChar = newChar;
-        command[arrayContainsChar(lastChar, symbols, maxSize)][arrayContainsInt(lastStateNum, states,
-                                                                                maxSize)].newStateNum = newStateNum;
-        command[arrayContainsChar(lastChar, symbols, maxSize)][arrayContainsInt(lastStateNum, states,
-                                                                                maxSize)].move = move;
+        command[arrayContainsChar(lastChar, symbols, maxArraySize)][arrayContainsInt(lastStateNum, states,
+                                                                                maxArraySize)].newChar = newChar;
+        command[arrayContainsChar(lastChar, symbols, maxArraySize)][arrayContainsInt(lastStateNum, states,
+                                                                                maxArraySize)].newStateNum = newStateNum;
+        command[arrayContainsChar(lastChar, symbols, maxArraySize)][arrayContainsInt(lastStateNum, states,
+                                                                                maxArraySize)].move = move;
 
         i++;
-        if (i == maxSize) {
-            maxSize = ARRAY_SIZE * (i - ARRAY_SIZE + 1);
-            states = realloc(states, maxSize * sizeof(int));
-            symbols = realloc(symbols, maxSize * sizeof(char));
-            command = realloc(command, maxSize * sizeof(struct Command *));
+        if (i == maxArraySize) {
+            maxArraySize = ARRAY_SIZE * (i - ARRAY_SIZE + 1);
+            states = realloc(states, maxArraySize * sizeof(int));
+            symbols = realloc(symbols, maxArraySize * sizeof(char));
+            command = realloc(command, maxArraySize * sizeof(struct Command *));
 
             for (int j = 0; j < i - 1; ++j) {
-                command[i] = realloc(command, maxSize * sizeof(struct Command));
+                command[i] = realloc(command, maxArraySize * sizeof(struct Command));
             }
         }
     }
@@ -138,8 +135,8 @@ int main(int argc, char *argv[]) {
     fclose(inputOne);
 
     //убрать печать
-    for (int k = 0; k < maxSize; ++k) {
-        for (int j = 0; j < maxSize; ++j) {
+    for (int k = 0; k < maxArraySize; ++k) {
+        for (int j = 0; j < maxArraySize; ++j) {
             printf("%c%d%c  ", command[k][j].newChar, command[k][j].newStateNum, command[k][j].move);
         }
         printf("\n");
@@ -150,15 +147,21 @@ int main(int argc, char *argv[]) {
     int headState = -1;
     char *tape;
     tape = calloc(TAPE_SIZE, sizeof(char));
-
-    // добавить realloc? дописать в тз?
+    int maxTapeSize = TAPE_SIZE;
 
     ret = fscanf(inputTwo, " %s", head);
+
     if (ret == NULL) {
         printf("No input data in %s line 1", argv[2]);
         exit(107);
     }
-    for (int l = 0; l < TAPE_SIZE; ++l) {
+
+    while (head[maxTapeSize] != '\0'){
+        maxTapeSize = maxTapeSize * 2;
+        head = realloc(head, maxTapeSize * sizeof(int));
+    }
+
+    for (int l = 0; l < maxTapeSize; ++l) {
         if (head[l] != '_' && head[l] != 'v' && head[l] != '\0'){
             printf("Wrong input char %c in %s line 1", head[l], argv[2]);
             exit(108);
@@ -185,7 +188,7 @@ int main(int argc, char *argv[]) {
     //убрать печать
     printf("%d", headState);
     printf("\n");
-    for (int m = 0; m < TAPE_SIZE; ++m) {
+    for (int m = 0; m < maxTapeSize; ++m) {
         printf("%c", tape[m]);
     }
     exit(0);
