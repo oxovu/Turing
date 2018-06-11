@@ -176,7 +176,6 @@ int main(int argc, char *argv[]) {
         exit(109);
     }
 
-
     ret = fscanf(inputTwo, " %s", tape);
     if (ret == NULL) {
         printf("No input data in %s line 2", argv[2]);
