@@ -1,7 +1,7 @@
 #include "input.h"
 
-#define ARRAY_SIZE 6
-#define TAPE_SIZE 6
+#define ARRAY_SIZE 6 //начальная длина матрицы смежности
+#define TAPE_SIZE 6 //начальная длина ленты
 
 int main(int argc, char *argv[]) {
     FILE *inputOne;
@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
     FILE *output;
 
     if (argc == 1) {
-        //вызвать описание программы
+        //описание программы
         exit(0);
     }
 
@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
         exit(101);
     }
 
-    char lastChar;
+    char lastChar; //переменные для чтения из файла состояний
     char lastState;
     int lastStateNum;
     char dash;
@@ -47,22 +47,19 @@ int main(int argc, char *argv[]) {
     char newState;
     int newStateNum;
     char move;
-    int maxArraySize = ARRAY_SIZE;
+    int maxArraySize = ARRAY_SIZE; //размер матрицы смежности
 
-    int *states;
+    int *states; //вспомогательный массив, хранящий состояния
     states = calloc(ARRAY_SIZE, sizeof(states));
-    char *symbols;
+    char *symbols; //вспомагательный массив, хранящий символы ленты
     symbols = calloc(ARRAY_SIZE, sizeof(symbols));
 
-    int i = 0;
-    int statesCount = 0;
-    int symbolsCount = 0;
-    struct Command blankCommand = {'\0', 0, '\0'};
+    int i = 0; //счетчик для заполнения марицы смежности
+    int statesCount = 0; //текущий индекс массива states
+    int symbolsCount = 0; //текущий индекс массива symbols
+    struct Command blankCommand = {'\0', 0, '\0'}; //пустая команда
 
-
-    int ret = 0;
-
-    struct Command **command;
+    struct Command **command; //таблица смежности
     command = calloc(ARRAY_SIZE, sizeof(struct Command *));
 
     for (int j = 0; j < ARRAY_SIZE; ++j) {
@@ -74,12 +71,12 @@ int main(int argc, char *argv[]) {
         exit(102);
     }
 
-    while (true) {
+    int ret = 0; //сечтчик fscanf
+
+    while (true) { //чтение файла с командами
         ret = fscanf(inputOne, " %c %c %d %c %c %c %d %c", &lastChar, &lastState, &lastStateNum, &dash, &newChar,
                      &newState, &newStateNum, &move);
         if (ret == EOF) break;
-
-        //поменять коды ошибок и сообщения
 
         if (ret != 8) {
             printf("Wrong number of input chars");
@@ -95,7 +92,6 @@ int main(int argc, char *argv[]) {
             printf("There is no new part");
             exit(105);
         }
-
 
         if (move != 'L' && move != 'R' && move != 'H' && move != 'S') {
             printf("Wrong move command");
@@ -114,7 +110,7 @@ int main(int argc, char *argv[]) {
         }
 
         i++;
-        if (i == maxArraySize) {
+        if (i == maxArraySize) { //увеличение матрицы при необходимости
             maxArraySize = maxArraySize * 2;
             states = realloc(states, maxArraySize * sizeof(int));
             symbols = realloc(symbols, maxArraySize * sizeof(char));
@@ -124,7 +120,6 @@ int main(int argc, char *argv[]) {
                 command[j] = realloc(command[j], maxArraySize * sizeof(struct Command));
                 for (int k = maxArraySize / 2; k < maxArraySize; ++k) {
                     command[j][k] = blankCommand;
-
                 }
             }
 
@@ -132,6 +127,8 @@ int main(int argc, char *argv[]) {
                 command[k] = calloc(maxArraySize, sizeof(struct Command));
             }
         }
+
+        //запись команд в матрицу смежности
 
         command[arrayContainsChar(lastChar, symbols, maxArraySize)][arrayContainsInt(lastStateNum, states,
                                                                                      maxArraySize)].newChar = newChar;
@@ -151,9 +148,9 @@ int main(int argc, char *argv[]) {
         printf("\n");
     }
 
-    char *head;
+    char *head; //переменные для чтения файла с лентой
     head = calloc(TAPE_SIZE, sizeof(char));
-    int headState = -1;
+    int headState = -1; //индекс положения головки машины
     char *tape;
     tape = calloc(TAPE_SIZE, sizeof(char));
     int maxTapeSize = TAPE_SIZE;
@@ -165,7 +162,7 @@ int main(int argc, char *argv[]) {
         exit(107);
     }
 
-    while (head[maxTapeSize] != '\0') {
+    while (head[maxTapeSize] != '\0') { //увеличение размера ленты при необходимости
         maxTapeSize = maxTapeSize * 2;
         head = realloc(head, maxTapeSize * sizeof(int));
         for (int j = maxTapeSize / 2; j < maxTapeSize; ++j) {
@@ -205,14 +202,14 @@ int main(int argc, char *argv[]) {
     exit(0);
 }
 
-int arrayContainsChar(char symbol, char *arr, int maxSize) {
+int arrayContainsChar(char symbol, char *arr, int maxSize) { //возвращает индекс символа или -1 если символ не найден
     for (int i = 0; i < maxSize - 1; ++i) {
         if (arr[i] == symbol) return i;
     }
     return -1;
 }
 
-int arrayContainsInt(int symbol, int *arr, int maxSize) {
+int arrayContainsInt(int symbol, int *arr, int maxSize) { //возвращает индекс числа или -1 если символ не найден
     for (int i = 0; i < maxSize - 1; ++i) {
         if (arr[i] == symbol) return i;
     }
