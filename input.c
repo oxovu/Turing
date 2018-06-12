@@ -1,7 +1,7 @@
 #include "input.h"
 
-#define ARRAY_SIZE 5
-#define TAPE_SIZE 12
+#define ARRAY_SIZE 6
+#define TAPE_SIZE 6
 
 int main(int argc, char *argv[]) {
     FILE *inputOne;
@@ -57,6 +57,7 @@ int main(int argc, char *argv[]) {
     int i = 0;
     int statesCount = 0;
     int symbolsCount = 0;
+    struct Command blankCommand = {'\0', 0, '\0'};
 
 
     int ret = 0;
@@ -112,24 +113,32 @@ int main(int argc, char *argv[]) {
             statesCount++;
         }
 
-        command[arrayContainsChar(lastChar, symbols, maxArraySize)][arrayContainsInt(lastStateNum, states,
-                                                                                maxArraySize)].newChar = newChar;
-        command[arrayContainsChar(lastChar, symbols, maxArraySize)][arrayContainsInt(lastStateNum, states,
-                                                                                maxArraySize)].newStateNum = newStateNum;
-        command[arrayContainsChar(lastChar, symbols, maxArraySize)][arrayContainsInt(lastStateNum, states,
-                                                                                maxArraySize)].move = move;
-
         i++;
         if (i == maxArraySize) {
-            maxArraySize = ARRAY_SIZE * (i - ARRAY_SIZE + 1);
+            maxArraySize = maxArraySize * 2;
             states = realloc(states, maxArraySize * sizeof(int));
             symbols = realloc(symbols, maxArraySize * sizeof(char));
             command = realloc(command, maxArraySize * sizeof(struct Command *));
 
-            for (int j = 0; j < i - 1; ++j) {
-                command[i] = realloc(command, maxArraySize * sizeof(struct Command));
+            for (int j = 0; j < maxArraySize / 2; ++j) {
+                command[j] = realloc(command[j], maxArraySize * sizeof(struct Command));
+                for (int k = maxArraySize / 2; k < maxArraySize; ++k) {
+                    command[j][k] = blankCommand;
+
+                }
+            }
+
+            for (int k = maxArraySize / 2; k < maxArraySize; ++k) {
+                command[k] = calloc(maxArraySize, sizeof(struct Command));
             }
         }
+
+        command[arrayContainsChar(lastChar, symbols, maxArraySize)][arrayContainsInt(lastStateNum, states,
+                                                                                     maxArraySize)].newChar = newChar;
+        command[arrayContainsChar(lastChar, symbols, maxArraySize)][arrayContainsInt(lastStateNum, states,
+                                                                                     maxArraySize)].newStateNum = newStateNum;
+        command[arrayContainsChar(lastChar, symbols, maxArraySize)][arrayContainsInt(lastStateNum, states,
+                                                                                     maxArraySize)].move = move;
     }
 
     fclose(inputOne);
@@ -156,13 +165,16 @@ int main(int argc, char *argv[]) {
         exit(107);
     }
 
-    while (head[maxTapeSize] != '\0'){
+    while (head[maxTapeSize] != '\0') {
         maxTapeSize = maxTapeSize * 2;
         head = realloc(head, maxTapeSize * sizeof(int));
+        for (int j = maxTapeSize / 2; j < maxTapeSize; ++j) {
+            head[j] = '\0';
+        }
     }
 
     for (int l = 0; l < maxTapeSize; ++l) {
-        if (head[l] != '_' && head[l] != 'v' && head[l] != '\0'){
+        if (head[l] != '_' && head[l] != 'v' && head[l] != '\0') {
             printf("Wrong input char %c in %s line 1", head[l], argv[2]);
             exit(108);
         }
@@ -171,7 +183,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    if (headState == -1){
+    if (headState == -1) {
         printf("Wrong input data in %s line 1", argv[2]);
         exit(109);
     }
