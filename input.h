@@ -14,5 +14,6 @@ struct Command {
 
 int arrayContainsChar(char symbol, char *arr, int maxSize);
 int arrayContainsInt(int symbol, int *arr, int maxSize);
+void step(int headState, int lastStateNum, char *tape, char *symbols, int *states, struct Command **arr, int maxSize);
 
 #endif //TURING_INPUT_H

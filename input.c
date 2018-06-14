@@ -1,9 +1,9 @@
 #include "input.h"
 
-#define ARRAY_SIZE 6 //начальная длина матрицы смежности
-#define TAPE_SIZE 6 //начальная длина ленты
+#define ARRAY_SIZE 7 //начальная длина матрицы смежности
+#define TAPE_SIZE 7 //начальная длина ленты
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) { //добавить в ленте проверку на пустой символ B
     FILE *inputOne;
     FILE *inputTwo;
     FILE *output;
@@ -162,10 +162,14 @@ int main(int argc, char *argv[]) {
         exit(107);
     }
 
+    //подумать
+
     while (head[maxTapeSize] != '\0') { //увеличение размера ленты при необходимости
         maxTapeSize = maxTapeSize * 2;
         head = realloc(head, maxTapeSize * sizeof(int));
+        tape = realloc(tape, maxTapeSize * sizeof(char));
         for (int j = maxTapeSize / 2; j < maxTapeSize; ++j) {
+            tape[j] = '\0';
             head[j] = '\0';
         }
     }
@@ -199,19 +203,59 @@ int main(int argc, char *argv[]) {
     for (int m = 0; m < maxTapeSize; ++m) {
         printf("%c", tape[m]);
     }
+
+    step(headState, lastStateNum, tape, symbols, states, command, maxArraySize);
+
+    printf("\n");
+    for (int n = 0; n < maxTapeSize; ++n) {
+        printf("%c", tape[n]);
+    }
+
     exit(0);
 }
 
 int arrayContainsChar(char symbol, char *arr, int maxSize) { //возвращает индекс символа или -1 если символ не найден
-    for (int i = 0; i < maxSize - 1; ++i) {
+    for (int i = 0; i < maxSize; ++i) {
         if (arr[i] == symbol) return i;
     }
     return -1;
 }
 
-int arrayContainsInt(int symbol, int *arr, int maxSize) { //возвращает индекс числа или -1 если символ не найден
-    for (int i = 0; i < maxSize - 1; ++i) {
+int arrayContainsInt(int symbol, int *arr, int maxSize) { //возвращает индекс числа или -1 если число не найдено
+    for (int i = 0; i < maxSize; ++i) {
         if (arr[i] == symbol) return i;
     }
     return -1;
 }
+
+void step(int headState, int lastStateNum, char *tape, char *symbols, int *states, struct Command **arr, int maxSize) {
+    char lastChar = tape[headState];
+    int i = arrayContainsChar(lastChar, symbols, maxSize);
+    int j = arrayContainsInt(lastStateNum, states, maxSize);
+    lastStateNum = arr[i][j].newStateNum;
+    tape[headState] = arr[i][j].newChar;
+    switch (arr[i][j].move) {
+        case 'L':
+            headState--;
+            break;
+        case 'R':
+            headState++;
+            break;
+    }
+    if (headState < 0) {
+        printf("Head index out of bounds");
+        exit(200);
+    }
+    if (arr[i][j].move != 'S') {
+    step(headState, lastStateNum, tape, symbols, states, arr, maxSize);
+    }
+}
+
+//int findCharInMatrix(struct Command **arr, char symbol, int maxSize) {
+//    for (int j = 0; j < maxSize; ++j) {
+//    for (int i = 0; i < maxSize; ++i) {
+//        if (arr[i][j].newChar == symbol) return ;
+//    }
+//
+//    }
+//}
