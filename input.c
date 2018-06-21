@@ -1,7 +1,7 @@
 #include "input.h"
 
 #define ARRAY_SIZE 7 //начальная длина матрицы смежности
-#define TAPE_SIZE 7 //начальная длина ленты
+#define TAPE_SIZE 4 //начальная длина ленты
 
 int main(int argc, char *argv[]) { //добавить в ленте проверку на пустой символ B
     FILE *inputOne;
@@ -140,19 +140,21 @@ int main(int argc, char *argv[]) { //добавить в ленте провер
 
     fclose(inputOne);
 
-    //убрать печать
-    for (int k = 0; k < maxArraySize; ++k) {
-        for (int j = 0; j < maxArraySize; ++j) {
-            printf("%c%d%c  ", command[k][j].newChar, command[k][j].newStateNum, command[k][j].move);
-        }
-        printf("\n");
-    }
+    printCommands(command, maxArraySize, output);
 
     char *head; //переменные для чтения файла с лентой
     head = calloc(TAPE_SIZE, sizeof(char));
+    if (head == NULL) {
+        printf("Memory allocation error");
+        exit(102);
+    }
     int headState = -1; //индекс положения головки машины
     char *tape;
     tape = calloc(TAPE_SIZE, sizeof(char));
+    if (tape == NULL) {
+        printf("Memory allocation error");
+        exit(102);
+    }
     int maxTapeSize = TAPE_SIZE;
 
     ret = fscanf(inputTwo, " %s", head);
@@ -162,17 +164,16 @@ int main(int argc, char *argv[]) { //добавить в ленте провер
         exit(107);
     }
 
-    //подумать
-
     while (head[maxTapeSize] != '\0') { //увеличение размера ленты при необходимости
-        maxTapeSize = maxTapeSize * 2;
+        maxTapeSize = maxTapeSize + 1;
         head = realloc(head, maxTapeSize * sizeof(int));
         tape = realloc(tape, maxTapeSize * sizeof(char));
-        for (int j = maxTapeSize / 2; j < maxTapeSize; ++j) {
+        for (int j = maxTapeSize - 1; j < maxTapeSize; ++j) {
             tape[j] = '\0';
-            head[j] = '\0';
         }
     }
+    fseek(inputTwo, 0, SEEK_SET);
+    ret = fscanf(inputTwo, " %s", head);
 
     for (int l = 0; l < maxTapeSize; ++l) {
         if (head[l] != '_' && head[l] != 'v' && head[l] != '\0') {
@@ -197,18 +198,17 @@ int main(int argc, char *argv[]) { //добавить в ленте провер
 
     fclose(inputTwo);
 
-    //убрать печать
-    printf("%d", headState);
-    printf("\n");
-    for (int m = 0; m < maxTapeSize; ++m) {
-        printf("%c", tape[m]);
-    }
+    printHead(headState, maxTapeSize, output);
+    printTape(tape, maxTapeSize, output);
 
-    step(headState, lastStateNum, tape, symbols, states, command, maxArraySize);
+    if (!strcmp(argv[4], "-a")) {
 
-    printf("\n");
-    for (int n = 0; n < maxTapeSize; ++n) {
-        printf("%c", tape[n]);
+        int quit = 0; //количество шагов
+
+        headState = step(headState, 1, tape, symbols, states, command, maxArraySize, quit, output);
+
+        printHead(headState, maxTapeSize, output);
+        printTape(tape, maxTapeSize, output);
     }
 
     exit(0);
@@ -228,34 +228,3 @@ int arrayContainsInt(int symbol, int *arr, int maxSize) { //возвращает
     return -1;
 }
 
-void step(int headState, int lastStateNum, char *tape, char *symbols, int *states, struct Command **arr, int maxSize) {
-    char lastChar = tape[headState];
-    int i = arrayContainsChar(lastChar, symbols, maxSize);
-    int j = arrayContainsInt(lastStateNum, states, maxSize);
-    lastStateNum = arr[i][j].newStateNum;
-    tape[headState] = arr[i][j].newChar;
-    switch (arr[i][j].move) {
-        case 'L':
-            headState--;
-            break;
-        case 'R':
-            headState++;
-            break;
-    }
-    if (headState < 0) {
-        printf("Head index out of bounds");
-        exit(200);
-    }
-    if (arr[i][j].move != 'S') {
-    step(headState, lastStateNum, tape, symbols, states, arr, maxSize);
-    }
-}
-
-//int findCharInMatrix(struct Command **arr, char symbol, int maxSize) {
-//    for (int j = 0; j < maxSize; ++j) {
-//    for (int i = 0; i < maxSize; ++i) {
-//        if (arr[i][j].newChar == symbol) return ;
-//    }
-//
-//    }
-//}

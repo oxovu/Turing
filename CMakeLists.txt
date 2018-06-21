@@ -3,4 +3,4 @@ project(Turing C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(Turing input.c input.h)
+add_executable(Turing input.c input.h step.c output.c)

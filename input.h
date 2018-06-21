@@ -13,7 +13,18 @@ struct Command {
 };
 
 int arrayContainsChar(char symbol, char *arr, int maxSize);
+
 int arrayContainsInt(int symbol, int *arr, int maxSize);
-void step(int headState, int lastStateNum, char *tape, char *symbols, int *states, struct Command **arr, int maxSize);
+
+int step(int headState, int lastStateNum, char *tape, char *symbols, int *states, struct Command **arr, int maxSize,
+          int quit, FILE *output);
+
+void printTape(char *tape, int maxTapeSize, FILE *output);
+
+void printHead(int headState, int maxTapeSize, FILE *output);
+
+void printCommands(struct Command **arr, int maxSize, FILE *output);
+
+void printCommand(struct Command command, char lastChar, int lastStateNum, FILE *output);
 
 #endif //TURING_INPUT_H
