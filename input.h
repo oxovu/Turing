@@ -16,8 +16,8 @@ int arrayContainsChar(char symbol, char *arr, int maxSize);
 
 int arrayContainsInt(int symbol, int *arr, int maxSize);
 
-int step(int headState, int lastStateNum, char *tape, char *symbols, int *states, struct Command **arr, int maxSize,
-          int quit, FILE *output);
+int step(int headState, int lastStateNum, char *tape, char *symbols, int *states, struct Command **arr, int maxArraySize, int maxTapeSize,
+          int quit, FILE *output, _Bool flag);
 
 void printTape(char *tape, int maxTapeSize, FILE *output);
 
