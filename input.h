@@ -12,6 +12,8 @@ struct Command {
     char move;
 };
 
+int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]);
+
 int arrayContainsChar(char symbol, char *arr, int maxSize);
 
 int arrayContainsInt(int symbol, int *arr, int maxSize);

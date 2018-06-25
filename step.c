@@ -16,7 +16,7 @@ step(int headState, int lastStateNum, char *tape, char *symbols, int *states, st
         char lastChar = tape[headState];
         int i = arrayContainsChar(lastChar, symbols, maxArraySize);
         int j = arrayContainsInt(lastStateNum, states, maxArraySize);
-        if (i == -1 || j == -1) {
+        if (arr[i][j].newStateNum == NULL || arr[i][j].newChar == NULL) {
             printf("Don't have command for the state");
             exit(203);
         }
