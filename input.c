@@ -174,7 +174,7 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
     }
 
     while (head[maxTapeSize] != '\0') { //увеличение размера ленты при необходимости
-        maxTapeSize = maxTapeSize + 1;
+        maxTapeSize++;
         head = realloc(head, maxTapeSize * sizeof(int));
         if (head == NULL) {
             printf("Memory allocation error");

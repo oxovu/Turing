@@ -17,9 +17,9 @@ b - break,
 f - follow the program in standart mode.
 Example:
 input1.txt
-0q1-1q1L
-1q1-1q1L
-2q1-1q1S
+-0q1-1q1L
+-1q1-1q1L
+-2q1-1q1S
 input2.txt
 __v__
 20101

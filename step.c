@@ -31,6 +31,15 @@ step(int headState, int lastStateNum, char *tape, char *symbols, int *states, st
                 headState++;
                 break;
         }
+        if (headState == maxTapeSize) {
+            maxTapeSize++;
+            tape = realloc(tape, maxTapeSize * sizeof(char));
+            if (tape == NULL) {
+                printf("Memory allocation error");
+                exit(102);
+            }
+            tape[maxTapeSize - 1] = ' ';
+        }
         if (headState < 0) {
             printf("Head index out of bounds");
             exit(200);
