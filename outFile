@@ -1,0 +1,1738 @@
+Tape
+__v_
+_38 
+Running command
+8q1-8q12R
+Tape
+___v
+_38 
+Running command
+ q12- q2L
+Tape
+__v_
+_38 
+Running command
+8q2-7q3R
+Tape
+___v
+_37 
+Running command
+ q3- q7R
+Tape
+____v
+_37  
+Running command
+ q7-0q4H
+Tape
+____v
+_37 0
+Running command
+0q4-0q4R
+Tape
+_____v
+_37 0 
+Running command
+ q4- q5L
+Tape
+____v_
+_37 0 
+Running command
+0q5-1q6L
+Tape
+___v__
+_37 1 
+Running command
+ q6- q2L
+Tape
+__v___
+_37 1 
+Running command
+7q2-6q3R
+Tape
+___v__
+_36 1 
+Running command
+ q3- q7R
+Tape
+____v_
+_36 1 
+Running command
+1q7-1q4H
+Tape
+____v_
+_36 1 
+Running command
+1q4-1q4R
+Tape
+_____v
+_36 1 
+Running command
+ q4- q5L
+Tape
+____v_
+_36 1 
+Running command
+1q5-2q6L
+Tape
+___v__
+_36 2 
+Running command
+ q6- q2L
+Tape
+__v___
+_36 2 
+Running command
+6q2-5q3R
+Tape
+___v__
+_35 2 
+Running command
+ q3- q7R
+Tape
+____v_
+_35 2 
+Running command
+2q7-2q4H
+Tape
+____v_
+_35 2 
+Running command
+2q4-2q4R
+Tape
+_____v
+_35 2 
+Running command
+ q4- q5L
+Tape
+____v_
+_35 2 
+Running command
+2q5-3q6L
+Tape
+___v__
+_35 3 
+Running command
+ q6- q2L
+Tape
+__v___
+_35 3 
+Running command
+5q2-4q3R
+Tape
+___v__
+_34 3 
+Running command
+ q3- q7R
+Tape
+____v_
+_34 3 
+Running command
+3q7-3q4H
+Tape
+____v_
+_34 3 
+Running command
+3q4-3q4R
+Tape
+_____v
+_34 3 
+Running command
+ q4- q5L
+Tape
+____v_
+_34 3 
+Running command
+3q5-4q6L
+Tape
+___v__
+_34 4 
+Running command
+ q6- q2L
+Tape
+__v___
+_34 4 
+Running command
+4q2-3q3R
+Tape
+___v__
+_33 4 
+Running command
+ q3- q7R
+Tape
+____v_
+_33 4 
+Running command
+4q7-4q4H
+Tape
+____v_
+_33 4 
+Running command
+4q4-4q4R
+Tape
+_____v
+_33 4 
+Running command
+ q4- q5L
+Tape
+____v_
+_33 4 
+Running command
+4q5-5q6L
+Tape
+___v__
+_33 5 
+Running command
+ q6- q2L
+Tape
+__v___
+_33 5 
+Running command
+3q2-2q3R
+Tape
+___v__
+_32 5 
+Running command
+ q3- q7R
+Tape
+____v_
+_32 5 
+Running command
+5q7-5q4H
+Tape
+____v_
+_32 5 
+Running command
+5q4-5q4R
+Tape
+_____v
+_32 5 
+Running command
+ q4- q5L
+Tape
+____v_
+_32 5 
+Running command
+5q5-6q6L
+Tape
+___v__
+_32 6 
+Running command
+ q6- q2L
+Tape
+__v___
+_32 6 
+Running command
+2q2-1q3R
+Tape
+___v__
+_31 6 
+Running command
+ q3- q7R
+Tape
+____v_
+_31 6 
+Running command
+6q7-6q4H
+Tape
+____v_
+_31 6 
+Running command
+6q4-6q4R
+Tape
+_____v
+_31 6 
+Running command
+ q4- q5L
+Tape
+____v_
+_31 6 
+Running command
+6q5-7q6L
+Tape
+___v__
+_31 7 
+Running command
+ q6- q2L
+Tape
+__v___
+_31 7 
+Running command
+1q2-0q3R
+Tape
+___v__
+_30 7 
+Running command
+ q3- q7R
+Tape
+____v_
+_30 7 
+Running command
+7q7-7q4H
+Tape
+____v_
+_30 7 
+Running command
+7q4-7q4R
+Tape
+_____v
+_30 7 
+Running command
+ q4- q5L
+Tape
+____v_
+_30 7 
+Running command
+7q5-0q9L
+Tape
+___v__
+_30 0 
+Running command
+ q9- q10R
+Tape
+____v_
+_30 0 
+Running command
+0q10-1q11R
+Tape
+_____v
+_30 1 
+Running command
+ q11-0q6L
+Tape
+____v_
+_30 10
+Running command
+1q6-1q6L
+Tape
+___v__
+_30 10
+Running command
+ q6- q2L
+Tape
+__v___
+_30 10
+Running command
+0q2-9q2L
+Tape
+_v____
+_39 10
+Running command
+3q2-2q3R
+Tape
+__v___
+_29 10
+Running command
+9q3-9q3R
+Tape
+___v__
+_29 10
+Running command
+ q3- q7R
+Tape
+____v_
+_29 10
+Running command
+1q7-1q4H
+Tape
+____v_
+_29 10
+Running command
+1q4-1q4R
+Tape
+_____v
+_29 10
+Running command
+0q4-0q4R
+Tape
+______v
+_29 10 
+Running command
+ q4- q5L
+Tape
+_____v_
+_29 10 
+Running command
+0q5-1q6L
+Tape
+____v__
+_29 11 
+Running command
+1q6-1q6L
+Tape
+___v___
+_29 11 
+Running command
+ q6- q2L
+Tape
+__v____
+_29 11 
+Running command
+9q2-8q3R
+Tape
+___v___
+_28 11 
+Running command
+ q3- q7R
+Tape
+____v__
+_28 11 
+Running command
+1q7-1q4H
+Tape
+____v__
+_28 11 
+Running command
+1q4-1q4R
+Tape
+_____v_
+_28 11 
+Running command
+1q4-1q4R
+Tape
+______v
+_28 11 
+Running command
+ q4- q5L
+Tape
+_____v_
+_28 11 
+Running command
+1q5-2q6L
+Tape
+____v__
+_28 12 
+Running command
+1q6-1q6L
+Tape
+___v___
+_28 12 
+Running command
+ q6- q2L
+Tape
+__v____
+_28 12 
+Running command
+8q2-7q3R
+Tape
+___v___
+_27 12 
+Running command
+ q3- q7R
+Tape
+____v__
+_27 12 
+Running command
+1q7-1q4H
+Tape
+____v__
+_27 12 
+Running command
+1q4-1q4R
+Tape
+_____v_
+_27 12 
+Running command
+2q4-2q4R
+Tape
+______v
+_27 12 
+Running command
+ q4- q5L
+Tape
+_____v_
+_27 12 
+Running command
+2q5-3q6L
+Tape
+____v__
+_27 13 
+Running command
+1q6-1q6L
+Tape
+___v___
+_27 13 
+Running command
+ q6- q2L
+Tape
+__v____
+_27 13 
+Running command
+7q2-6q3R
+Tape
+___v___
+_26 13 
+Running command
+ q3- q7R
+Tape
+____v__
+_26 13 
+Running command
+1q7-1q4H
+Tape
+____v__
+_26 13 
+Running command
+1q4-1q4R
+Tape
+_____v_
+_26 13 
+Running command
+3q4-3q4R
+Tape
+______v
+_26 13 
+Running command
+ q4- q5L
+Tape
+_____v_
+_26 13 
+Running command
+3q5-4q6L
+Tape
+____v__
+_26 14 
+Running command
+1q6-1q6L
+Tape
+___v___
+_26 14 
+Running command
+ q6- q2L
+Tape
+__v____
+_26 14 
+Running command
+6q2-5q3R
+Tape
+___v___
+_25 14 
+Running command
+ q3- q7R
+Tape
+____v__
+_25 14 
+Running command
+1q7-1q4H
+Tape
+____v__
+_25 14 
+Running command
+1q4-1q4R
+Tape
+_____v_
+_25 14 
+Running command
+4q4-4q4R
+Tape
+______v
+_25 14 
+Running command
+ q4- q5L
+Tape
+_____v_
+_25 14 
+Running command
+4q5-5q6L
+Tape
+____v__
+_25 15 
+Running command
+1q6-1q6L
+Tape
+___v___
+_25 15 
+Running command
+ q6- q2L
+Tape
+__v____
+_25 15 
+Running command
+5q2-4q3R
+Tape
+___v___
+_24 15 
+Running command
+ q3- q7R
+Tape
+____v__
+_24 15 
+Running command
+1q7-1q4H
+Tape
+____v__
+_24 15 
+Running command
+1q4-1q4R
+Tape
+_____v_
+_24 15 
+Running command
+5q4-5q4R
+Tape
+______v
+_24 15 
+Running command
+ q4- q5L
+Tape
+_____v_
+_24 15 
+Running command
+5q5-6q6L
+Tape
+____v__
+_24 16 
+Running command
+1q6-1q6L
+Tape
+___v___
+_24 16 
+Running command
+ q6- q2L
+Tape
+__v____
+_24 16 
+Running command
+4q2-3q3R
+Tape
+___v___
+_23 16 
+Running command
+ q3- q7R
+Tape
+____v__
+_23 16 
+Running command
+1q7-1q4H
+Tape
+____v__
+_23 16 
+Running command
+1q4-1q4R
+Tape
+_____v_
+_23 16 
+Running command
+6q4-6q4R
+Tape
+______v
+_23 16 
+Running command
+ q4- q5L
+Tape
+_____v_
+_23 16 
+Running command
+6q5-7q6L
+Tape
+____v__
+_23 17 
+Running command
+1q6-1q6L
+Tape
+___v___
+_23 17 
+Running command
+ q6- q2L
+Tape
+__v____
+_23 17 
+Running command
+3q2-2q3R
+Tape
+___v___
+_22 17 
+Running command
+ q3- q7R
+Tape
+____v__
+_22 17 
+Running command
+1q7-1q4H
+Tape
+____v__
+_22 17 
+Running command
+1q4-1q4R
+Tape
+_____v_
+_22 17 
+Running command
+7q4-7q4R
+Tape
+______v
+_22 17 
+Running command
+ q4- q5L
+Tape
+_____v_
+_22 17 
+Running command
+7q5-0q9L
+Tape
+____v__
+_22 10 
+Running command
+1q9-2q6H
+Tape
+____v__
+_22 20 
+Running command
+2q6-2q6L
+Tape
+___v___
+_22 20 
+Running command
+ q6- q2L
+Tape
+__v____
+_22 20 
+Running command
+2q2-1q3R
+Tape
+___v___
+_21 20 
+Running command
+ q3- q7R
+Tape
+____v__
+_21 20 
+Running command
+2q7-2q4H
+Tape
+____v__
+_21 20 
+Running command
+2q4-2q4R
+Tape
+_____v_
+_21 20 
+Running command
+0q4-0q4R
+Tape
+______v
+_21 20 
+Running command
+ q4- q5L
+Tape
+_____v_
+_21 20 
+Running command
+0q5-1q6L
+Tape
+____v__
+_21 21 
+Running command
+2q6-2q6L
+Tape
+___v___
+_21 21 
+Running command
+ q6- q2L
+Tape
+__v____
+_21 21 
+Running command
+1q2-0q3R
+Tape
+___v___
+_20 21 
+Running command
+ q3- q7R
+Tape
+____v__
+_20 21 
+Running command
+2q7-2q4H
+Tape
+____v__
+_20 21 
+Running command
+2q4-2q4R
+Tape
+_____v_
+_20 21 
+Running command
+1q4-1q4R
+Tape
+______v
+_20 21 
+Running command
+ q4- q5L
+Tape
+_____v_
+_20 21 
+Running command
+1q5-2q6L
+Tape
+____v__
+_20 22 
+Running command
+2q6-2q6L
+Tape
+___v___
+_20 22 
+Running command
+ q6- q2L
+Tape
+__v____
+_20 22 
+Running command
+0q2-9q2L
+Tape
+_v_____
+_29 22 
+Running command
+2q2-1q3R
+Tape
+__v____
+_19 22 
+Running command
+9q3-9q3R
+Tape
+___v___
+_19 22 
+Running command
+ q3- q7R
+Tape
+____v__
+_19 22 
+Running command
+2q7-2q4H
+Tape
+____v__
+_19 22 
+Running command
+2q4-2q4R
+Tape
+_____v_
+_19 22 
+Running command
+2q4-2q4R
+Tape
+______v
+_19 22 
+Running command
+ q4- q5L
+Tape
+_____v_
+_19 22 
+Running command
+2q5-3q6L
+Tape
+____v__
+_19 23 
+Running command
+2q6-2q6L
+Tape
+___v___
+_19 23 
+Running command
+ q6- q2L
+Tape
+__v____
+_19 23 
+Running command
+9q2-8q3R
+Tape
+___v___
+_18 23 
+Running command
+ q3- q7R
+Tape
+____v__
+_18 23 
+Running command
+2q7-2q4H
+Tape
+____v__
+_18 23 
+Running command
+2q4-2q4R
+Tape
+_____v_
+_18 23 
+Running command
+3q4-3q4R
+Tape
+______v
+_18 23 
+Running command
+ q4- q5L
+Tape
+_____v_
+_18 23 
+Running command
+3q5-4q6L
+Tape
+____v__
+_18 24 
+Running command
+2q6-2q6L
+Tape
+___v___
+_18 24 
+Running command
+ q6- q2L
+Tape
+__v____
+_18 24 
+Running command
+8q2-7q3R
+Tape
+___v___
+_17 24 
+Running command
+ q3- q7R
+Tape
+____v__
+_17 24 
+Running command
+2q7-2q4H
+Tape
+____v__
+_17 24 
+Running command
+2q4-2q4R
+Tape
+_____v_
+_17 24 
+Running command
+4q4-4q4R
+Tape
+______v
+_17 24 
+Running command
+ q4- q5L
+Tape
+_____v_
+_17 24 
+Running command
+4q5-5q6L
+Tape
+____v__
+_17 25 
+Running command
+2q6-2q6L
+Tape
+___v___
+_17 25 
+Running command
+ q6- q2L
+Tape
+__v____
+_17 25 
+Running command
+7q2-6q3R
+Tape
+___v___
+_16 25 
+Running command
+ q3- q7R
+Tape
+____v__
+_16 25 
+Running command
+2q7-2q4H
+Tape
+____v__
+_16 25 
+Running command
+2q4-2q4R
+Tape
+_____v_
+_16 25 
+Running command
+5q4-5q4R
+Tape
+______v
+_16 25 
+Running command
+ q4- q5L
+Tape
+_____v_
+_16 25 
+Running command
+5q5-6q6L
+Tape
+____v__
+_16 26 
+Running command
+2q6-2q6L
+Tape
+___v___
+_16 26 
+Running command
+ q6- q2L
+Tape
+__v____
+_16 26 
+Running command
+6q2-5q3R
+Tape
+___v___
+_15 26 
+Running command
+ q3- q7R
+Tape
+____v__
+_15 26 
+Running command
+2q7-2q4H
+Tape
+____v__
+_15 26 
+Running command
+2q4-2q4R
+Tape
+_____v_
+_15 26 
+Running command
+6q4-6q4R
+Tape
+______v
+_15 26 
+Running command
+ q4- q5L
+Tape
+_____v_
+_15 26 
+Running command
+6q5-7q6L
+Tape
+____v__
+_15 27 
+Running command
+2q6-2q6L
+Tape
+___v___
+_15 27 
+Running command
+ q6- q2L
+Tape
+__v____
+_15 27 
+Running command
+5q2-4q3R
+Tape
+___v___
+_14 27 
+Running command
+ q3- q7R
+Tape
+____v__
+_14 27 
+Running command
+2q7-2q4H
+Tape
+____v__
+_14 27 
+Running command
+2q4-2q4R
+Tape
+_____v_
+_14 27 
+Running command
+7q4-7q4R
+Tape
+______v
+_14 27 
+Running command
+ q4- q5L
+Tape
+_____v_
+_14 27 
+Running command
+7q5-0q9L
+Tape
+____v__
+_14 20 
+Running command
+2q9-3q6H
+Tape
+____v__
+_14 30 
+Running command
+3q6-3q6L
+Tape
+___v___
+_14 30 
+Running command
+ q6- q2L
+Tape
+__v____
+_14 30 
+Running command
+4q2-3q3R
+Tape
+___v___
+_13 30 
+Running command
+ q3- q7R
+Tape
+____v__
+_13 30 
+Running command
+3q7-3q4H
+Tape
+____v__
+_13 30 
+Running command
+3q4-3q4R
+Tape
+_____v_
+_13 30 
+Running command
+0q4-0q4R
+Tape
+______v
+_13 30 
+Running command
+ q4- q5L
+Tape
+_____v_
+_13 30 
+Running command
+0q5-1q6L
+Tape
+____v__
+_13 31 
+Running command
+3q6-3q6L
+Tape
+___v___
+_13 31 
+Running command
+ q6- q2L
+Tape
+__v____
+_13 31 
+Running command
+3q2-2q3R
+Tape
+___v___
+_12 31 
+Running command
+ q3- q7R
+Tape
+____v__
+_12 31 
+Running command
+3q7-3q4H
+Tape
+____v__
+_12 31 
+Running command
+3q4-3q4R
+Tape
+_____v_
+_12 31 
+Running command
+1q4-1q4R
+Tape
+______v
+_12 31 
+Running command
+ q4- q5L
+Tape
+_____v_
+_12 31 
+Running command
+1q5-2q6L
+Tape
+____v__
+_12 32 
+Running command
+3q6-3q6L
+Tape
+___v___
+_12 32 
+Running command
+ q6- q2L
+Tape
+__v____
+_12 32 
+Running command
+2q2-1q3R
+Tape
+___v___
+_11 32 
+Running command
+ q3- q7R
+Tape
+____v__
+_11 32 
+Running command
+3q7-3q4H
+Tape
+____v__
+_11 32 
+Running command
+3q4-3q4R
+Tape
+_____v_
+_11 32 
+Running command
+2q4-2q4R
+Tape
+______v
+_11 32 
+Running command
+ q4- q5L
+Tape
+_____v_
+_11 32 
+Running command
+2q5-3q6L
+Tape
+____v__
+_11 33 
+Running command
+3q6-3q6L
+Tape
+___v___
+_11 33 
+Running command
+ q6- q2L
+Tape
+__v____
+_11 33 
+Running command
+1q2-0q3R
+Tape
+___v___
+_10 33 
+Running command
+ q3- q7R
+Tape
+____v__
+_10 33 
+Running command
+3q7-3q4H
+Tape
+____v__
+_10 33 
+Running command
+3q4-3q4R
+Tape
+_____v_
+_10 33 
+Running command
+3q4-3q4R
+Tape
+______v
+_10 33 
+Running command
+ q4- q5L
+Tape
+_____v_
+_10 33 
+Running command
+3q5-4q6L
+Tape
+____v__
+_10 34 
+Running command
+3q6-3q6L
+Tape
+___v___
+_10 34 
+Running command
+ q6- q2L
+Tape
+__v____
+_10 34 
+Running command
+0q2-9q2L
+Tape
+_v_____
+_19 34 
+Running command
+1q2-0q3R
+Tape
+__v____
+_09 34 
+Running command
+9q3-9q3R
+Tape
+___v___
+_09 34 
+Running command
+ q3- q7R
+Tape
+____v__
+_09 34 
+Running command
+3q7-3q4H
+Tape
+____v__
+_09 34 
+Running command
+3q4-3q4R
+Tape
+_____v_
+_09 34 
+Running command
+4q4-4q4R
+Tape
+______v
+_09 34 
+Running command
+ q4- q5L
+Tape
+_____v_
+_09 34 
+Running command
+4q5-5q6L
+Tape
+____v__
+_09 35 
+Running command
+3q6-3q6L
+Tape
+___v___
+_09 35 
+Running command
+ q6- q2L
+Tape
+__v____
+_09 35 
+Running command
+9q2-8q3R
+Tape
+___v___
+_08 35 
+Running command
+ q3- q7R
+Tape
+____v__
+_08 35 
+Running command
+3q7-3q4H
+Tape
+____v__
+_08 35 
+Running command
+3q4-3q4R
+Tape
+_____v_
+_08 35 
+Running command
+5q4-5q4R
+Tape
+______v
+_08 35 
+Running command
+ q4- q5L
+Tape
+_____v_
+_08 35 
+Running command
+5q5-6q6L
+Tape
+____v__
+_08 36 
+Running command
+3q6-3q6L
+Tape
+___v___
+_08 36 
+Running command
+ q6- q2L
+Tape
+__v____
+_08 36 
+Running command
+8q2-7q3R
+Tape
+___v___
+_07 36 
+Running command
+ q3- q7R
+Tape
+____v__
+_07 36 
+Running command
+3q7-3q4H
+Tape
+____v__
+_07 36 
+Running command
+3q4-3q4R
+Tape
+_____v_
+_07 36 
+Running command
+6q4-6q4R
+Tape
+______v
+_07 36 
+Running command
+ q4- q5L
+Tape
+_____v_
+_07 36 
+Running command
+6q5-7q6L
+Tape
+____v__
+_07 37 
+Running command
+3q6-3q6L
+Tape
+___v___
+_07 37 
+Running command
+ q6- q2L
+Tape
+__v____
+_07 37 
+Running command
+7q2-6q3R
+Tape
+___v___
+_06 37 
+Running command
+ q3- q7R
+Tape
+____v__
+_06 37 
+Running command
+3q7-3q4H
+Tape
+____v__
+_06 37 
+Running command
+3q4-3q4R
+Tape
+_____v_
+_06 37 
+Running command
+7q4-7q4R
+Tape
+______v
+_06 37 
+Running command
+ q4- q5L
+Tape
+_____v_
+_06 37 
+Running command
+7q5-0q9L
+Tape
+____v__
+_06 30 
+Running command
+3q9-4q6H
+Tape
+____v__
+_06 40 
+Running command
+4q6-4q6L
+Tape
+___v___
+_06 40 
+Running command
+ q6- q2L
+Tape
+__v____
+_06 40 
+Running command
+6q2-5q3R
+Tape
+___v___
+_05 40 
+Running command
+ q3- q7R
+Tape
+____v__
+_05 40 
+Running command
+4q7-4q4H
+Tape
+____v__
+_05 40 
+Running command
+4q4-4q4R
+Tape
+_____v_
+_05 40 
+Running command
+0q4-0q4R
+Tape
+______v
+_05 40 
+Running command
+ q4- q5L
+Tape
+_____v_
+_05 40 
+Running command
+0q5-1q6L
+Tape
+____v__
+_05 41 
+Running command
+4q6-4q6L
+Tape
+___v___
+_05 41 
+Running command
+ q6- q2L
+Tape
+__v____
+_05 41 
+Running command
+5q2-4q3R
+Tape
+___v___
+_04 41 
+Running command
+ q3- q7R
+Tape
+____v__
+_04 41 
+Running command
+4q7-4q4H
+Tape
+____v__
+_04 41 
+Running command
+4q4-4q4R
+Tape
+_____v_
+_04 41 
+Running command
+1q4-1q4R
+Tape
+______v
+_04 41 
+Running command
+ q4- q5L
+Tape
+_____v_
+_04 41 
+Running command
+1q5-2q6L
+Tape
+____v__
+_04 42 
+Running command
+4q6-4q6L
+Tape
+___v___
+_04 42 
+Running command
+ q6- q2L
+Tape
+__v____
+_04 42 
+Running command
+4q2-3q3R
+Tape
+___v___
+_03 42 
+Running command
+ q3- q7R
+Tape
+____v__
+_03 42 
+Running command
+4q7-4q4H
+Tape
+____v__
+_03 42 
+Running command
+4q4-4q4R
+Tape
+_____v_
+_03 42 
+Running command
+2q4-2q4R
+Tape
+______v
+_03 42 
+Running command
+ q4- q5L
+Tape
+_____v_
+_03 42 
+Running command
+2q5-3q6L
+Tape
+____v__
+_03 43 
+Running command
+4q6-4q6L
+Tape
+___v___
+_03 43 
+Running command
+ q6- q2L
+Tape
+__v____
+_03 43 
+Running command
+3q2-2q3R
+Tape
+___v___
+_02 43 
+Running command
+ q3- q7R
+Tape
+____v__
+_02 43 
+Running command
+4q7-4q4H
+Tape
+____v__
+_02 43 
+Running command
+4q4-4q4R
+Tape
+_____v_
+_02 43 
+Running command
+3q4-3q4R
+Tape
+______v
+_02 43 
+Running command
+ q4- q5L
+Tape
+_____v_
+_02 43 
+Running command
+3q5-4q6L
+Tape
+____v__
+_02 44 
+Running command
+4q6-4q6L
+Tape
+___v___
+_02 44 
+Running command
+ q6- q2L
+Tape
+__v____
+_02 44 
+Running command
+2q2-1q3R
+Tape
+___v___
+_01 44 
+Running command
+ q3- q7R
+Tape
+____v__
+_01 44 
+Running command
+4q7-4q4H
+Tape
+____v__
+_01 44 
+Running command
+4q4-4q4R
+Tape
+_____v_
+_01 44 
+Running command
+4q4-4q4R
+Tape
+______v
+_01 44 
+Running command
+ q4- q5L
+Tape
+_____v_
+_01 44 
+Running command
+4q5-5q6L
+Tape
+____v__
+_01 45 
+Running command
+4q6-4q6L
+Tape
+___v___
+_01 45 
+Running command
+ q6- q2L
+Tape
+__v____
+_01 45 
+Running command
+1q2-0q3R
+Tape
+___v___
+_00 45 
+Running command
+ q3- q7R
+Tape
+____v__
+_00 45 
+Running command
+4q7-4q4H
+Tape
+____v__
+_00 45 
+Running command
+4q4-4q4R
+Tape
+_____v_
+_00 45 
+Running command
+5q4-5q4R
+Tape
+______v
+_00 45 
+Running command
+ q4- q5L
+Tape
+_____v_
+_00 45 
+Running command
+5q5-6q6L
+Tape
+____v__
+_00 46 
+Running command
+4q6-4q6L
+Tape
+___v___
+_00 46 
+Running command
+ q6- q2L
+Tape
+__v____
+_00 46 
+Running command
+0q2-9q2L
+Tape
+_v_____
+_09 46 
+Running command
+0q2-9q2L
+Tape
+v______
+_99 46 
+Running command
+_q2-_q8R
+Tape
+_v_____
+_99 46 
+Running command
+9q8- q8R
+Tape
+__v____
+_ 9 46 
+Running command
+9q8- q8R
+Tape
+___v___
+_   46 
+Running command
+ q8- q16S
+Tape
+___v___
+_   46 
