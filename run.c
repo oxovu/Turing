@@ -10,7 +10,7 @@ void inf() {
                    " you run debug\ns - one step,\nb - break,\nf - follow the program in standart mode.\nExample:"
                    "\ninput1.txt\n-0q1-1q1L\n-1q1-1q1L\n-2q1-1q1S\ninput2.txt\n__v__\n20101\noutput.txt\nTape\n__v__\n20101"
                    "\nRunning command\n1q1-1q1L\nTape\n_v___\n20101\nRunning command\n0q1-1q1L\nTape\nv____\n21101"
-                   "\nRunning command\n2q1-1q1S\nTape\nv____\n11101");
+                   "\nRunning command\n2q1-1q1S\nTape\nv____\n11101\n");
 }
 
 
@@ -30,13 +30,13 @@ int main(int argc, char *argv[]) {
         inputOne = fopen(argv[1], "rt");
 
         if (inputOne == NULL) {
-            printf("Can not find file %s", argv[1]);
+            printf("Can not find file %s\n", argv[1]);
             exit(100);
         }
 
         inputTwo = fopen(argv[2], "rt");
         if (inputTwo == NULL) {
-            printf("Can not find file %s", argv[2]);
+            printf("Can not find file %s\n", argv[2]);
             exit(100);
         }
 
@@ -48,12 +48,14 @@ int main(int argc, char *argv[]) {
 
     if (argc != 5) {
         if (argc != 6 || (argc == 6 && (strcmp(argv[5], "-p") != 0))) {
-            printf("Wrong number of arguments");
+            printf("Wrong number of arguments\n");
             exit(101);
         }
     }
 
     input(inputOne, inputTwo, output, argc, argv);
+
+    exit(0);
 }
 
 

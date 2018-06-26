@@ -1,7 +1,7 @@
 #include "input.h"
 
 // в этом примере используется
-//myFile myFile2 outFile -a
+// myFile myFile2 outFile -a
 
 #define ARRAY_SIZE 7 //начальная длина матрицы смежности
 #define TAPE_SIZE 4 //начальная длина ленты
@@ -26,13 +26,13 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
     int *states; //вспомогательный массив, хранящий состояния
     states = calloc(ARRAY_SIZE, sizeof(states));
     if (states == NULL) {
-        printf("Memory allocation error");
+        printf("Memory allocation error\n");
         exit(102);
     }
     char *symbols; //вспомагательный массив, хранящий символы ленты
     symbols = calloc(ARRAY_SIZE, sizeof(symbols));
     if (symbols == NULL) {
-        printf("Memory allocation error");
+        printf("Memory allocation error\n");
         exit(102);
     }
 
@@ -45,44 +45,41 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
     command = calloc(ARRAY_SIZE, sizeof(struct Command *));
 
     if (command == NULL) {
-        printf("Memory allocation error");
+        printf("Memory allocation error\n");
         exit(102);
     }
 
     for (int j = 0; j < ARRAY_SIZE; ++j) {
         command[j] = calloc(ARRAY_SIZE, sizeof(struct Command));
         if (command[j] == NULL) {
-            printf("Memory allocation error");
+            printf("Memory allocation error\n");
             exit(102);
         }
     }
 
 
     int ret = 0; //сечтчик fscanf
+    int line = 0;
 
     while (true) { //чтение файла с командами
+        line++;
 
         ret = fscanf(inputOne, "%c%c%c%d%c%c%c%d%c\n", &dash, &lastChar, &lastState, &lastStateNum, &dash, &newChar,
                      &newState, &newStateNum, &move);
         if (ret == EOF) break;
 
         if (ret != 9) {
-            printf("Wrong number of input chars");
+            printf("Wrong number of input chars\n");
             exit(103);
         }
 
         if (lastState != 'q' || newState != 'q') {
-            printf("Can not find states");
+            printf("Can not find states in line %d\n", line);
             exit(104);
         }
 
-        if (dash != '-') {
-            printf("There is no new part");
-            exit(105);
-        }
-
         if (move != 'L' && move != 'R' && move != 'H' && move != 'S') {
-            printf("Wrong move command");
+            printf("Wrong move command in line %d\n", line);
             exit(106);
         }
 
@@ -101,24 +98,24 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
             maxArraySize = maxArraySize * 2;
             states = realloc(states, maxArraySize * sizeof(int));
             if (states == NULL) {
-                printf("Memory allocation error");
+                printf("Memory allocation error\n");
                 exit(102);
             }
             symbols = realloc(symbols, maxArraySize * sizeof(char));
             if (symbols == NULL) {
-                printf("Memory allocation error");
+                printf("Memory allocation error\n");
                 exit(102);
             }
             command = realloc(command, maxArraySize * sizeof(struct Command *));
             if (command == NULL) {
-                printf("Memory allocation error");
+                printf("Memory allocation error\n");
                 exit(102);
             }
 
             for (int j = 0; j < maxArraySize / 2; ++j) {
                 command[j] = realloc(command[j], maxArraySize * sizeof(struct Command));
                 if (command[j] == NULL) {
-                    printf("Memory allocation error");
+                    printf("Memory allocation error\n");
                     exit(102);
                 }
                 for (int k = maxArraySize / 2; k < maxArraySize; ++k) {
@@ -129,7 +126,7 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
             for (int k = maxArraySize / 2; k < maxArraySize; ++k) {
                 command[k] = calloc(maxArraySize, sizeof(struct Command));
                 if (command[k] == NULL) {
-                    printf("Memory allocation error");
+                    printf("Memory allocation error\n");
                     exit(102);
                 }
             }
@@ -147,29 +144,31 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
 
     fclose(inputOne);
 
-    if (argc == 6 && (strcmp(argv[5], "-p") == 0)) {
+    if (argc == 6 && (strcmp(argv[5], "-p") == 0)) { // печать матрицы смежности
         printCommands(command, maxArraySize, output);
     }
 
     char *head; //переменные для чтения файла с лентой
     head = calloc(TAPE_SIZE, sizeof(char));
     if (head == NULL) {
-        printf("Memory allocation error");
+        printf("Memory allocation error\n");
         exit(102);
     }
+
     int headState = -1; //индекс положения головки машины
     char *tape;
     tape = calloc(TAPE_SIZE, sizeof(char));
     if (tape == NULL) {
-        printf("Memory allocation error");
+        printf("Memory allocation error\n");
         exit(102);
     }
+
     int maxTapeSize = TAPE_SIZE;
 
     ret = fscanf(inputTwo, " %s", head);
 
-    if (ret == NULL) {
-        printf("No input data in %s line 1", argv[2]);
+    if (ret == -1) {
+        printf("No input data in %s line 1\n", argv[2]);
         exit(107);
     }
 
@@ -177,12 +176,12 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
         maxTapeSize++;
         head = realloc(head, maxTapeSize * sizeof(int));
         if (head == NULL) {
-            printf("Memory allocation error");
+            printf("Memory allocation error\n");
             exit(102);
         }
         tape = realloc(tape, maxTapeSize * sizeof(char));
         if (tape == NULL) {
-            printf("Memory allocation error");
+            printf("Memory allocation error\n");
             exit(102);
         }
         for (int j = maxTapeSize - 1; j < maxTapeSize; ++j) {
@@ -192,14 +191,14 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
     fseek(inputTwo, 0, SEEK_SET);
     ret = fscanf(inputTwo, " %s", head);
 
-    if (ret == NULL) {
-        printf("No input data in %s line 1", argv[2]);
+    if (ret == -1) {
+        printf("No input data in %s line 1\n", argv[2]);
         exit(107);
     }
 
     for (int l = 0; l < maxTapeSize; ++l) {
         if (head[l] != '_' && head[l] != 'v' && head[l] != '\0') {
-            printf("Wrong input char %c in %s line 1", head[l], argv[2]);
+            printf("Wrong input char %c in %s line 1\n", head[l], argv[2]);
             exit(108);
         }
         if (head[l] == 'v') {
@@ -209,10 +208,9 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
     }
 
     if (headState == -1) {
-        printf("Can not find the head");
+        printf("Can not find the head\n");
         exit(202);
     }
-
 
     fscanf(inputTwo, "\n");
 
@@ -221,12 +219,12 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
     }
 
     for (int n = 0; n < maxTapeSize; ++n) {
-        fscanf(inputTwo, "%1c", &tape[n]);
+        fscanf(inputTwo, "%c", &tape[n]);
     }
 
     fclose(inputTwo);
 
-    if (strcmp(argv[4], "-o") == 0) {
+    if (strcmp(argv[4], "-o") == 0) { // вызван ли режим debug
         flag = true;
     }
 
@@ -235,10 +233,7 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
 
     int quit = 0; //количество шагов
 
-    headState = step(headState, 1, tape, symbols, states, command, maxArraySize, maxTapeSize, quit, output, flag);
-
-    printHead(headState, maxTapeSize, output);
-    printTape(tape, maxTapeSize, output);
+    step(headState, 1, tape, symbols, states, command, maxArraySize, maxTapeSize, quit, output, flag);
 
     free(head);
     free(tape);
@@ -248,8 +243,6 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
         free(command[m]);
     }
     fclose(output);
-
-    exit(0);
 }
 
 
