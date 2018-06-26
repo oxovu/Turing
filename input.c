@@ -26,13 +26,13 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
     int *states; //вспомогательный массив, хранящий состояния
     states = calloc(ARRAY_SIZE, sizeof(states));
     if (states == NULL) {
-        printf("Memory allocation error\n");
+        printf("error 102: Memory allocation error\n");
         exit(102);
     }
     char *symbols; //вспомагательный массив, хранящий символы ленты
     symbols = calloc(ARRAY_SIZE, sizeof(symbols));
     if (symbols == NULL) {
-        printf("Memory allocation error\n");
+        printf("error 102: Memory allocation error\n");
         exit(102);
     }
 
@@ -45,14 +45,14 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
     command = calloc(ARRAY_SIZE, sizeof(struct Command *));
 
     if (command == NULL) {
-        printf("Memory allocation error\n");
+        printf("error 102: Memory allocation error\n");
         exit(102);
     }
 
     for (int j = 0; j < ARRAY_SIZE; ++j) {
         command[j] = calloc(ARRAY_SIZE, sizeof(struct Command));
         if (command[j] == NULL) {
-            printf("Memory allocation error\n");
+            printf("error 102: Memory allocation error\n");
             exit(102);
         }
     }
@@ -69,17 +69,17 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
         if (ret == EOF) break;
 
         if (ret != 9) {
-            printf("Wrong number of input chars\n");
+            printf("error 103: Wrong number of input chars\n");
             exit(103);
         }
 
         if (lastState != 'q' || newState != 'q') {
-            printf("Can not find states in line %d\n", line);
+            printf("error 104: Can not find states in line %d\n", line);
             exit(104);
         }
 
         if (move != 'L' && move != 'R' && move != 'H' && move != 'S') {
-            printf("Wrong move command in line %d\n", line);
+            printf("error 106: Wrong move command in line %d\n", line);
             exit(106);
         }
 
@@ -98,24 +98,24 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
             maxArraySize = maxArraySize * 2;
             states = realloc(states, maxArraySize * sizeof(int));
             if (states == NULL) {
-                printf("Memory allocation error\n");
+                printf("error 102: Memory allocation error\n");
                 exit(102);
             }
             symbols = realloc(symbols, maxArraySize * sizeof(char));
             if (symbols == NULL) {
-                printf("Memory allocation error\n");
+                printf("error 102: Memory allocation error\n");
                 exit(102);
             }
             command = realloc(command, maxArraySize * sizeof(struct Command *));
             if (command == NULL) {
-                printf("Memory allocation error\n");
+                printf("error 102: Memory allocation error\n");
                 exit(102);
             }
 
             for (int j = 0; j < maxArraySize / 2; ++j) {
                 command[j] = realloc(command[j], maxArraySize * sizeof(struct Command));
                 if (command[j] == NULL) {
-                    printf("Memory allocation error\n");
+                    printf("error 102: Memory allocation error\n");
                     exit(102);
                 }
                 for (int k = maxArraySize / 2; k < maxArraySize; ++k) {
@@ -126,7 +126,7 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
             for (int k = maxArraySize / 2; k < maxArraySize; ++k) {
                 command[k] = calloc(maxArraySize, sizeof(struct Command));
                 if (command[k] == NULL) {
-                    printf("Memory allocation error\n");
+                    printf("error 102: Memory allocation error\n");
                     exit(102);
                 }
             }
@@ -151,7 +151,7 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
     char *head; //переменные для чтения файла с лентой
     head = calloc(TAPE_SIZE, sizeof(char));
     if (head == NULL) {
-        printf("Memory allocation error\n");
+        printf("error 102: Memory allocation error\n");
         exit(102);
     }
 
@@ -159,7 +159,7 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
     char *tape;
     tape = calloc(TAPE_SIZE, sizeof(char));
     if (tape == NULL) {
-        printf("Memory allocation error\n");
+        printf("error 102: Memory allocation error\n");
         exit(102);
     }
 
@@ -168,7 +168,7 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
     ret = fscanf(inputTwo, " %s", head);
 
     if (ret == -1) {
-        printf("No input data in %s line 1\n", argv[2]);
+        printf("error 107: No input data in %s line 1\n", argv[2]);
         exit(107);
     }
 
@@ -176,12 +176,12 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
         maxTapeSize++;
         head = realloc(head, maxTapeSize * sizeof(int));
         if (head == NULL) {
-            printf("Memory allocation error\n");
+            printf("error 102: Memory allocation error\n");
             exit(102);
         }
         tape = realloc(tape, maxTapeSize * sizeof(char));
         if (tape == NULL) {
-            printf("Memory allocation error\n");
+            printf("error 102: Memory allocation error\n");
             exit(102);
         }
         for (int j = maxTapeSize - 1; j < maxTapeSize; ++j) {
@@ -192,13 +192,13 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
     ret = fscanf(inputTwo, " %s", head);
 
     if (ret == -1) {
-        printf("No input data in %s line 1\n", argv[2]);
+        printf("error 107: No input data in %s line 1\n", argv[2]);
         exit(107);
     }
 
     for (int l = 0; l < maxTapeSize; ++l) {
         if (head[l] != '_' && head[l] != 'v' && head[l] != '\0') {
-            printf("Wrong input char %c in %s line 1\n", head[l], argv[2]);
+            printf("error 108: Wrong input char %c in %s line 1\n", head[l], argv[2]);
             exit(108);
         }
         if (head[l] == 'v') {
@@ -208,7 +208,7 @@ int input(FILE *inputOne, FILE *inputTwo, FILE *output, int argc, char *argv[]) 
     }
 
     if (headState == -1) {
-        printf("Can not find the head\n");
+        printf("error 202: Can not find the head\n");
         exit(202);
     }
 

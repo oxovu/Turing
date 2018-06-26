@@ -30,25 +30,25 @@ int main(int argc, char *argv[]) {
         inputOne = fopen(argv[1], "rt");
 
         if (inputOne == NULL) {
-            printf("Can not find file %s\n", argv[1]);
+            printf("error 100: Can not find first input file\n");
             exit(100);
         }
 
         inputTwo = fopen(argv[2], "rt");
         if (inputTwo == NULL) {
-            printf("Can not find file %s\n", argv[2]);
-            exit(100);
+            printf("error 109: Can not find second input file\n");
+            exit(109);
         }
 
         output = fopen(argv[3], "wr");
         if (output == NULL) {
-            printf("Can not find file %s", argv[3]);
+            printf("Can not find output file\n");
         }
     }
 
     if (argc != 5) {
         if (argc != 6 || (argc == 6 && (strcmp(argv[5], "-p") != 0))) {
-            printf("Wrong number of arguments\n");
+            printf("error 101: Wrong number of arguments\n");
             exit(101);
         }
     }

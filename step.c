@@ -9,7 +9,7 @@ step(int headState, int lastStateNum, char *tape, char *symbols, int *states, st
         int i = arrayContainsChar(lastChar, symbols, maxArraySize); // поиск индексов
         int j = arrayContainsInt(lastStateNum, states, maxArraySize);
         if (i == -1 || j == -1) {
-            printf("Don't have command for the state\n");
+            printf("error 203: Don't have command for the state\n");
             exit(203);
         }
         printCommand(arr[i][j], lastChar, lastStateNum, output);
@@ -27,13 +27,13 @@ step(int headState, int lastStateNum, char *tape, char *symbols, int *states, st
             maxTapeSize++;
             tape = realloc(tape, maxTapeSize * sizeof(char));
             if (tape == NULL) {
-                printf("Memory allocation error\n");
+                printf("error 102: Memory allocation error\n");
                 exit(102);
             }
             tape[maxTapeSize - 1] = ' ';
         }
         if (headState < 0) {
-            printf("Head index out of bounds\n");
+            printf("error 200: Head index out of bounds\n");
             exit(200);
         }
         if (arr[i][j].move == 'S') {
@@ -66,7 +66,7 @@ step(int headState, int lastStateNum, char *tape, char *symbols, int *states, st
     printTape(tape, maxTapeSize, output);
 
     if (quit == 1000) {
-        printf("Runtime error\n");
+        printf("error 201: Runtime error\n");
         exit(201);
     }
     return headState;
